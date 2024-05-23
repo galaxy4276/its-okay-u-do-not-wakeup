@@ -1,6 +1,7 @@
 package com.hbu.itsokudontwakeup;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.hbu.itsokudontwakeup.loading.FirstLandingActivity;
+import com.hbu.itsokudontwakeup.service.LoginValidator;
+import com.hbu.itsokudontwakeup.store.BoundStore;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,8 +21,13 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
+    LoginValidator loginValidator = new LoginValidator(this);
+
     setContentView(R.layout.activity_main);
     initializeTab();
+    initializeSharedPreferences();
+
+    loginValidator.checkUser();
 
     redirectFirstLoading();
   }
@@ -48,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
           break;
       }
     }).attach();
+  }
+
+  private void initializeSharedPreferences() {
+    SharedPreferences preferences = getSharedPreferences("user", MODE_PRIVATE);
+    BoundStore.init(preferences);
   }
 
 }

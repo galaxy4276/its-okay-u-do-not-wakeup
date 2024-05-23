@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/alarm_list">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.hbu.itsokudontwakeup.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/alarm_list"
+        android:name="com.hbu.itsokudontwakeup.ui.alarmlist.AlarmListFragment"
+        android:label="alarmList"
+        tools:layout="@layout/fragment_alarmlist" />
 
     <fragment
         android:id="@+id/navigation_dashboard"

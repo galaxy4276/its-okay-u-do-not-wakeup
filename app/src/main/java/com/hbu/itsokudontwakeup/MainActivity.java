@@ -19,9 +19,17 @@ public class MainActivity extends AppCompatActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
+    initializeTab();
 
     redirectFirstLoading();
+  }
 
+  private void redirectFirstLoading() {
+    Intent intent = new Intent(MainActivity.this, FirstLandingActivity.class);
+    startActivity(intent);
+  }
+
+  private void initializeTab() {
     TabLayout tabLayout = findViewById(R.id.header_nav);
     ViewPager2 pager = findViewById(R.id.header_nav_pager);
     HeaderNavAdapter adapter = new HeaderNavAdapter(this);
@@ -40,11 +48,6 @@ public class MainActivity extends AppCompatActivity {
           break;
       }
     }).attach();
-  }
-
-  private void redirectFirstLoading() {
-    Intent intent = new Intent(MainActivity.this, FirstLandingActivity.class);
-    startActivity(intent);
   }
 
 }

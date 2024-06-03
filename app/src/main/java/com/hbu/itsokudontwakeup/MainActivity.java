@@ -1,8 +1,12 @@
 package com.hbu.itsokudontwakeup;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     loginValidator.checkUser();
 
     redirectFirstLoading();
+    createNotificationChannel();
+
   }
 
   private void redirectFirstLoading() {
@@ -61,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
   private void initializeSharedPreferences() {
     SharedPreferences preferences = getSharedPreferences("user", MODE_PRIVATE);
     BoundStore.init(preferences);
+  }
+
+  private void createNotificationChannel() {
+    CharSequence name = "알람 채널";
+    String description = "알람을 위한 채널입니다.";
+    int importance = NotificationManager.IMPORTANCE_HIGH;
+    NotificationChannel channel = new NotificationChannel("alarm", name, importance);
+    channel.setDescription(description);
+    NotificationManager notificationManager = getSystemService(NotificationManager.class);
+    notificationManager.createNotificationChannel(channel);
   }
 
 }

@@ -18,8 +18,6 @@ import com.hbu.itsokudontwakeup.store.BoundStore;
 
 public class MainActivity extends AppCompatActivity {
 
-  private com.hbu.itsokudontwakeup.databinding.ActivityMainBinding binding;
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);

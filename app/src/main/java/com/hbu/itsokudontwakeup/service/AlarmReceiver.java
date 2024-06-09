@@ -26,7 +26,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     boolean isBootCompleted = Intent.ACTION_BOOT_COMPLETED.equals(intent.getAction());
 
     if (isBootCompleted) {
-
     }
 
 //    Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);

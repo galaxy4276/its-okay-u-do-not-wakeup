@@ -21,6 +21,8 @@ public class SettingFragment extends Fragment {
 
   private FragmentSettingBinding binding;
   private SettingStore store;
+  private EditText phoneEditText;
+  private EditText messageEditText;
 
   @Nullable
   @Override
@@ -28,21 +30,33 @@ public class SettingFragment extends Fragment {
     binding = FragmentSettingBinding.inflate(inflater, container, false);
     LinearLayout root = binding.getRoot();
     store = BoundStore.getSettingStore();
+    loadData();
 
     Button settingSaveButton = root.findViewById(R.id.save_setting_button);
+    phoneEditText = root.findViewById(R.id.target_phone);
+    messageEditText = root.findViewById(R.id.target_message);
 
     settingSaveButton.setOnClickListener(v -> {
-      EditText phoneEditText = root.findViewById(R.id.target_phone);
-      EditText messageEditText = root.findViewById(R.id.target_message);
-
       String phone = phoneEditText.getText().toString();
       String message = messageEditText.getText().toString();
-
       store.updatePhone(phone);
       store.updateMessage(message);
     });
 
     return root;
+  }
+
+  public void loadData() {
+    String phone = store.getPhone();
+    String message = store.getMessage();
+
+    if (phone != null) {
+      phoneEditText.setText(phone);
+    }
+
+    if (message != null) {
+      messageEditText.setText(message);
+    }
   }
 
 }

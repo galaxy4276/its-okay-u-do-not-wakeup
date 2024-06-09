@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -23,11 +22,9 @@ import com.hbu.itsokudontwakeup.R;
 import com.hbu.itsokudontwakeup.databinding.FragmentAlarmlistBinding;
 import com.hbu.itsokudontwakeup.service.AlarmListAdapter;
 import com.hbu.itsokudontwakeup.service.AlarmReceiver;
-import com.hbu.itsokudontwakeup.service.AlarmService;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 public class AlarmListFragment extends Fragment {

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    tools:context=".ui.setting.SettingFragment"
+    >
+
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설정된 카카오톡 대상 이름과 예약 메시지 정보로 대상에게 카카오톡 메시지가 발송됩니다."
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="상대 전화번호" />
+        <EditText
+            android:id="@+id/target_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="010-0000-0000"
+            android:autofillHints="010-0000-0000"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="예약 메시지" />
+        <EditText
+            android:id="@+id/target_message"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="저를 깨워주세요"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/save_setting_button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/radius_button"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="저장" />
+    </LinearLayout>
+
+</LinearLayout>
